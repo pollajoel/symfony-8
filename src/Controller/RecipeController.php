@@ -17,9 +17,10 @@ class RecipeController extends AbstractController
      */
     public function index(Request $request, string $slug, string $id ): Response
     {
-        dd( $request->attributes->get("id") );
-        return $this->render('recipe/index.html.twig', [
-            'controller_name' => 'RecipeController',
+        return $this->render("recipe/index.html.twig", 
+        [
+            "id"   => $id,
+            "slug" => $slug,
         ]);
     }
 }
